@@ -12,7 +12,7 @@ docker build -t onnxstream .
 mkdir output
 docker run --rm -it \
   --mount type=bind,source=$(pwd)/output,target=/app/out \
-  onnxstream:latest sd --models-path /weights/SD --output /app/out/out.png --prompt "a penguin standing in a forest" <additional parameters>
+  onnxstream:latest sd --models-path /weights/SD --output /app/out/out.png --prompt "a penguin standing in a forest" --neg-prompt "ugly, blurry" <additional parameters>
                                                                                                                        
 # Parameters
 # --models-path       Sets the folder containing the Stable Diffusion models. Weights are extracted to /weights/SD in the Docker container
